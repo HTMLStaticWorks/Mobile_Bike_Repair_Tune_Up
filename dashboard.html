@@ -130,6 +130,10 @@
                 <a href="index.html" class="brand">
                     <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo">
                 </a>
+                <button class="close-sidebar dashboard-close-sidebar" aria-label="Close Menu"
+                    style="display: none; margin-left: auto; background: none; border: none; font-size: 1.5rem; color: var(--text-primary); cursor: pointer;">
+                    <i class="fa-solid fa-times"></i>
+                </button>
             </div>
             <nav class="sidebar-nav">
                 <a href="dashboard.html" class="sidebar-link active">
@@ -138,6 +142,9 @@
                 <a href="booking-history.html" class="sidebar-link">
                     <i class="fa-solid fa-clock-rotate-left"></i> History
                 </a>
+                <div class="sidebar-link rtl-toggle mobile-only">
+                    <i class="fa-solid fa-language"></i> RTL Mode
+                </div>
                 <a href="index.html" class="sidebar-link text-primary" style="margin-top: auto; color: #EF4444;">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
                 </a>
@@ -162,10 +169,10 @@
                     <h2 style="margin: 0; font-size: 1.25rem;">Dashboard</h2>
                 </div>
                 <div class="nav-actions">
-                    <button class="icon-btn rtl-toggle desktop-only" aria-label="Toggle RTL" title="ع/EN">
-                        <i class="fa-solid fa-globe"></i>
+                    <button class="icon-btn rtl-toggle mobile-only" aria-label="Toggle RTL" title="ع/EN">
+                        <i class="fa-solid fa-language"></i>
                     </button>
-                    <button class="icon-btn theme-toggle desktop-only" aria-label="Toggle Theme">
+                    <button class="icon-btn theme-toggle mobile-only" aria-label="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
                 </div>

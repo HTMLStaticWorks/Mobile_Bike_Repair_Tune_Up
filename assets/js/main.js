@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarToggleBtn = document.querySelector('.sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
     const sidebarOverlay = document.querySelector('.sidebar-overlay');
+    const dashboardCloseBtn = document.querySelector('.dashboard-close-sidebar');
 
     if (sidebarToggleBtn && sidebar && sidebarOverlay) {
         sidebarToggleBtn.addEventListener('click', () => {
@@ -90,10 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarOverlay.classList.add('show');
         });
 
-        sidebarOverlay.addEventListener('click', () => {
+        const closeFunc = () => {
             sidebar.classList.remove('show');
             sidebarOverlay.classList.remove('show');
-        });
+        };
+
+        sidebarOverlay.addEventListener('click', closeFunc);
+        if (dashboardCloseBtn) {
+            dashboardCloseBtn.addEventListener('click', closeFunc);
+        }
     }
 
     // Form Validation Feedback

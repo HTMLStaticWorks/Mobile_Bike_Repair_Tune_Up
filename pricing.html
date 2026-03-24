@@ -108,6 +108,64 @@
             font-size: 2.5rem;
             color: var(--primary-color);
         }
+
+        /* FAQ Styling */
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            background: var(--card-bg);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 24px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-color-alt);
+            transition: all 0.3s ease;
+            user-select: none;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-color);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 500px;
+        }
+
+        [dir="rtl"] .faq-question {
+            text-align: right;
+        }
+
+        [dir="rtl"] .faq-answer {
+            text-align: right;
+        }
     </style>
 </head>
 
@@ -191,8 +249,9 @@
             </div>
         </section>
 
+        <!-- AFTER -->
         <!-- Pricing Cards -->
-        <section>
+        <section id="pricing-tiers" style="padding-bottom: 40px;">
             <div class="container">
                 <!-- Toggle -->
                 <div class="toggle-container">
@@ -204,7 +263,7 @@
                     <span class="pricing-label" id="labelOffice">Office Service</span>
                 </div>
 
-                <div class="card-grid" style="align-items: stretch; margin-top: 24px;">
+                <div class="card-grid pricing-grid">
                     <!-- Basic -->
                     <div class="card" style="align-items: flex-start; text-align: left;">
                         <h3 class="card-title w-full text-center">Basic Tune</h3>
@@ -228,11 +287,14 @@
                             <li style="margin-bottom: 12px;"><i class="fa-solid fa-check text-primary"></i> Tire
                                 Pressure Check & Inflate</li>
                             <li style="margin-bottom: 12px; color: var(--text-secondary);"><i
-                                    class="fa-solid fa-xmark"></i> Drivetrain Cleaning</li>
+                                    class="fa-solid fa-xmark"></i>
+                                Drivetrain Cleaning</li>
                             <li style="margin-bottom: 12px; color: var(--text-secondary);"><i
-                                    class="fa-solid fa-xmark"></i> Wheel Truing</li>
+                                    class="fa-solid fa-xmark"></i>
+                                Wheel Truing</li>
                             <li style="margin-bottom: 12px; color: var(--text-secondary);"><i
-                                    class="fa-solid fa-xmark"></i> Cable Replacement Labor</li>
+                                    class="fa-solid fa-xmark"></i>
+                                Cable Replacement Labor</li>
                         </ul>
                         <a href="dashboard.html" class="btn btn-outline btn-full pricing-btn">Start Booking</a>
                     </div>
@@ -315,7 +377,7 @@
         </section>
 
         <!-- Trust Badges -->
-        <section style="padding-top: 0;">
+        <section style="padding-top: 0; padding-bottom: 20px;">
             <div class="container">
                 <div class="trust-badges">
                     <div class="trust-badge">
@@ -337,73 +399,56 @@
             </div>
         </section>
 
-        <!-- Add-ons -->
-        <section class="section-bg-alt">
+
+
+
+
+        <!-- Pricing FAQ -->
+        <section style="padding-top: 40px;">
             <div class="container">
-                <h2>Popular Add-ons</h2>
-                <p style="margin-bottom: 40px;">Enhance your service with these requested extras. Note: Prices listed
-                    are for labor only, parts are additional.</p>
-
-                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div class="card"
-                        style="flex-direction: row; align-items: center; text-align: left; padding: 24px;">
-                        <div style="font-size: 2rem; color: var(--primary-color); margin-right: 24px;"><i
-                                class="fa-solid fa-box"></i></div>
-                        <div style="flex-grow: 1;">
-                            <h4 style="margin-bottom: 4px; text-align: left;">Premium Parts Upgrade</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Use top-tier cables & brake pads</p>
+                <h2 class="text-center">Pricing FAQs</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I customize my service?
+                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <div style="font-weight: 700; font-size: 1.2rem;">+$15</div>
+                        <div class="faq-answer">
+                            Yes. If your bike needs specific attention not listed in our packages, we provide an
+                            a-la-carte menu and custom quotes straight from our mechanic upon arrival.
+                        </div>
                     </div>
 
-                    <div class="card"
-                        style="flex-direction: row; align-items: center; text-align: left; padding: 24px;">
-                        <div style="font-size: 2rem; color: var(--primary-color); margin-right: 24px;"><i
-                                class="fa-solid fa-stopwatch"></i></div>
-                        <div style="flex-grow: 1;">
-                            <h4 style="margin-bottom: 4px; text-align: left;">Same-Day Service</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Skip the line. We arrive ASAP.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Are parts included in these prices?
+                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <div style="font-weight: 700; font-size: 1.2rem;">+$20</div>
+                        <div class="faq-answer">
+                            No, these prices reflect mobile mechanic labor. If any parts like tubes, cables, or chains
+                            need replacing, our mechanic will provide you with options and exact costs before
+                            proceeding.
+                        </div>
                     </div>
 
-                    <div class="card"
-                        style="flex-direction: row; align-items: center; text-align: left; padding: 24px;">
-                        <div style="font-size: 2rem; color: var(--primary-color); margin-right: 24px;"><i
-                                class="fa-solid fa-moon"></i></div>
-                        <div style="flex-grow: 1;">
-                            <h4 style="margin-bottom: 4px; text-align: left;">After-Hours Service</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Repairs between 8PM and 8AM.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a travel fee?
+                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <div style="font-weight: 700; font-size: 1.2rem;">+$25</div>
+                        <div class="faq-answer">
+                            Travel fees are included in the visit price for most central locations. For addresses
+                            outside
+                            our standard service radius, a small surcharge may apply, which will be shown during the
+                            booking process.
+                        </div>
                     </div>
-
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Minimal FAQ -->
-        <section>
-            <div class="container text-center">
-                <h2>Pricing FAQS</h2>
-                <div
-                    style="max-width: 700px; margin: 0 auto; text-align: left; background: var(--card-bg); padding: 32px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-                    <h4 style="text-align: left; margin-bottom: 8px;">Can I customize my service?</h4>
-                    <p>Yes. If your bike needs specific attention not listed in our packages, we provide an a-la-carte
-                        menu and custom quotes straight from our mechanic upon arrival.</p>
-                    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
-
-                    <h4 style="text-align: left; margin-bottom: 8px;">Are parts included in these prices?</h4>
-                    <p style="margin-bottom: 0;">No, these prices reflect mobile mechanic labor. If any parts like
-                        tubes, cables, or chains need replacing, our mechanic will provide you with options and exact
-                        costs before proceeding.</p>
                 </div>
             </div>
         </section>
 
         <!-- Final CTA -->
-        <section style="padding: 60px 0;">
+        <section style="padding: 20px 0 60px;">
             <div class="container text-center">
                 <a href="register.html" class="btn btn-primary btn-lg"
                     style="font-size: 1.2rem; padding: 16px 40px; border-radius: 50px; box-shadow: var(--shadow-lg);">
@@ -421,7 +466,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="brand" style="margin-bottom: 16px; display: inline-flex;">
-                        <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo" style="height: 42px;">
+                        <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo">
                     </a>
                     <p style="color: #94A3B8; font-size: 0.9rem;">Bike repair at your doorstep. We bring the shop to
                         you.</p>
@@ -455,20 +500,21 @@
                     </ul>
                 </div>
 
+
                 <div class="footer-col">
                     <h4 style="font-weight: 600; font-size: 1.1rem;">Contact</h4>
                     <ul class="footer-links" style="color: #94A3B8;">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary"></i>
                             hello@repairhub.com</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary"></i> +1 234 567
-                            8900</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary"></i> 123
-                            Bike Lane, City</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary"></i> +12344 56478
+                            911110</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary"></i>+23
+                            Bikers Lanes, Cits</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2024 RepairHub. All rights reserved.
+                &copy; 2026 RepairHub. All rights reserved
             </div>
         </div>
     </footer>
@@ -491,6 +537,27 @@
                 }
             });
         }
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const wasActive = faqItem.classList.contains('active');
+
+                // Close all FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle clicked FAQ
+                if (!wasActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Open first FAQ by default
+        document.querySelector('.faq-item')?.classList.add('active');
     </script>
 </body>
 

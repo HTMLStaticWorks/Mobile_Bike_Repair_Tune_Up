@@ -198,12 +198,13 @@ section {
 }
 
 /* ========================================
-   LOGO STYLING (SVG with text included)
+   LOGO SIZING - CONSISTENT ACROSS SITE
    ======================================== */
 
+/* Base Logo Styling */
 .brand-logo {
-    height: 40px;
-    width: auto;
+    width: 140px;
+    height: auto;
     display: block;
     object-fit: contain;
     transition: opacity 0.3s ease;
@@ -213,24 +214,29 @@ section {
     opacity: 0.85;
 }
 
+/* Navbar Logo - 140px */
 .navbar .brand-logo {
-    height: 36px;
+    width: 140px;
 }
 
-.mobile-sidebar-header .brand-logo {
-    height: 32px;
-}
-
-.sidebar-header .brand-logo {
-    height: 36px;
-}
-
-.auth-logo .brand-logo {
-    height: 48px;
-}
-
+/* Footer Logo - 140px (same as navbar) */
 .footer .brand-logo {
-    height: 36px;
+    width: 140px;
+}
+
+/* Mobile Sidebar Logo - 120px */
+.mobile-sidebar-header .brand-logo {
+    width: 120px;
+}
+
+/* Dashboard Sidebar Logo - 140px */
+.sidebar-header .brand-logo {
+    width: 140px;
+}
+
+/* Auth Pages Logo - 160px (larger) */
+.auth-logo .brand-logo {
+    width: 160px;
 }
 
 /* RTL Support */
@@ -239,24 +245,56 @@ section {
     /* Keep logo direction LTR even in RTL mode */
 }
 
-/* Responsive logo sizing */
-@media (max-width: 768px) {
+/* ========================================
+   RESPONSIVE LOGO SIZING
+   ======================================== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
     .navbar .brand-logo {
-        height: 32px;
+        width: 120px;
     }
 
     .footer .brand-logo {
-        height: 32px;
+        width: 120px;
+    }
+
+    .sidebar-header .brand-logo {
+        width: 120px;
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
     .navbar .brand-logo {
-        height: 28px;
+        width: 110px;
+    }
+
+    .footer .brand-logo {
+        width: 110px;
+    }
+
+    .mobile-sidebar-header .brand-logo {
+        width: 110px;
     }
 
     .auth-logo .brand-logo {
-        height: 42px;
+        width: 140px;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .navbar .brand-logo {
+        width: 100px;
+    }
+
+    .footer .brand-logo {
+        width: 100px;
+    }
+
+    .auth-logo .brand-logo {
+        width: 130px;
     }
 }
 
@@ -317,7 +355,7 @@ section {
 /* Cards */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: calc(var(--spacing-unit) * 2);
     margin-top: calc(var(--spacing-unit) * 6);
     justify-content: center;
@@ -844,10 +882,21 @@ section {
 
     .sidebar.show {
         transform: translateX(0);
+        z-index: 1100 !important;
+    }
+
+    .dashboard-close-sidebar {
+        display: flex !important;
+    }
+
+    .sidebar-link.rtl-toggle.mobile-only {
+        display: flex !important;
+        cursor: pointer;
     }
 
     .sidebar-overlay.show {
         display: block;
+        z-index: 1050 !important;
     }
 
     /* Navbar hiding */
@@ -969,7 +1018,7 @@ section {
 
 /* Footer Logo Sizing */
 .footer .brand-logo {
-    height: 42px;
+    width: 140px;
 }
 
 /* Align all footer columns at the top */
@@ -1083,16 +1132,25 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 3rem;
+    flex-shrink: 0;
 }
 
 .sc-content h3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 12px;
 }
 
+[dir="rtl"] .sc-content h3 {
+    text-align: right;
+}
+
 .sc-content p {
-    text-align: center;
+    text-align: left;
     margin-bottom: 16px;
+}
+
+[dir="rtl"] .sc-content p {
+    text-align: right;
 }
 
 .sc-features {
@@ -1102,16 +1160,23 @@ section {
     gap: 8px;
     text-align: left;
     padding: 0;
+    margin: 0;
+}
+
+[dir="rtl"] .sc-features {
+    text-align: right;
 }
 
 .sc-action {
-    text-align: right;
+    text-align: center;
     border-left: 1px solid var(--border-color);
     padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 [dir="rtl"] .sc-action {
-    text-align: left;
     border-left: none;
     border-right: 1px solid var(--border-color);
     padding-left: 0;
@@ -1152,6 +1217,14 @@ section {
         font-size: 2.5rem;
     }
 
+    .sc-content h3 {
+        text-align: center;
+    }
+
+    .sc-content p {
+        text-align: center;
+    }
+
     .sc-content {
         margin-bottom: 24px;
     }
@@ -1163,9 +1236,17 @@ section {
         margin: 0 auto;
     }
 
+    [dir="rtl"] .sc-features {
+        text-align: right;
+    }
+
     .sc-features li {
         text-align: left;
         justify-content: flex-start;
+    }
+
+    [dir="rtl"] .sc-features li {
+        text-align: right;
     }
 
     .sc-action {
@@ -1179,30 +1260,6 @@ section {
     [dir="rtl"] .sc-action {
         border-right: none;
         padding-right: 0;
-    }
-}
-
-/* Desktop & Webview - Move features to the right */
-@media (min-width: 1024px) {
-    .sc-features {
-        margin-left: 80px;
-    }
-
-    [dir="rtl"] .sc-features {
-        margin-left: 0;
-        margin-right: 80px;
-    }
-}
-
-/* Fine-tune for larger screens */
-@media (min-width: 1366px) {
-    .sc-features {
-        margin-left: 120px;
-    }
-
-    [dir="rtl"] .sc-features {
-        margin-left: 0;
-        margin-right: 120px;
     }
 }
 
@@ -1273,17 +1330,59 @@ section .card-grid {
     justify-content: center !important;
 }
 
-/* Tablet - 2 columns with 3rd centered */
+
+/* Tablet - 2 columns with 3rd centered (for pricing section only) */
 @media (max-width: 768px) and (min-width: 601px) {
-    .card-grid {
+    #pricing-preview .card-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    .card:nth-child(3) {
+    #pricing-preview .card:nth-child(3) {
         grid-column: 1 / -1;
-        max-width: 450px;
+        width: 50%;
         margin: 0 auto;
+        justify-self: center;
     }
+}
+
+/* How It Works - 3rd card centered in tablet view */
+@media (max-width: 1024px) and (min-width: 601px) {
+    #how-it-works .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #how-it-works .card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: 50%;
+        margin: 0 auto;
+        justify-self: center;
+    }
+}
+
+/* Testimonials - 3rd card centered in tablet view */
+@media (max-width: 1024px) and (min-width: 601px) {
+    #testimonials .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #testimonials .card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: 50%;
+        margin: 0 auto;
+        justify-self: center;
+    }
+}
+
+/* Homepage specific - keep 3 columns for all card grids */
+.homepage #pricing .card-grid,
+.homepage #how-it-works .card-grid,
+.homepage #testimonials .card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.homepage .card:nth-child(3) {
+    grid-column: auto !important;
+    max-width: none !important;
 }
 
 /* Mobile - 1 column, remove scale */
@@ -1443,4 +1542,185 @@ section .card-grid {
 .social-btn svg,
 .social-btn img {
     flex-shrink: 0;
+}
+
+/* ========================================
+   NAVBAR SPACING FIX
+   ======================================== */
+
+/* HTML/Body Strict Reset */
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+/* Navbar & Dashboard Topbar - Strict Fixed/Sticky positioning with no margins */
+.navbar,
+.dashboard-topbar,
+.sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1000 !important;
+}
+
+.navbar,
+.dashboard-topbar {
+    width: 100% !important;
+    height: 80px !important;
+}
+
+.sidebar {
+    position: fixed !important;
+    height: 100vh !important;
+    top: 0 !important;
+}
+
+/* Dashboard Topbar positioning (sticky inside main) */
+.dashboard-topbar {
+    position: sticky !important;
+    top: 0 !important;
+}
+
+/* Ensure navbar children are centered */
+.navbar .container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin: 0 auto !important;
+}
+
+/* Main content shift - exactly 80px offset (Excluding dashboard) */
+main:not(.dashboard-main) {
+    margin-top: 80px !important;
+    padding-top: 0 !important;
+    display: block !important;
+}
+
+/* Ensure dashboard-main starts at the very top */
+.dashboard-main {
+    margin-top: 0 !important;
+}
+
+/* Eliminate gap from first sections */
+main>section:first-child,
+main>section:first-of-type,
+main>.hero-section,
+.hero-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Alternative catch-all for any first child in main */
+main>*:first-child {
+    margin-top: 0 !important;
+}
+
+/* Generic Section Spacing Fixes */
+section {
+    margin-top: 0 !important;
+}
+
+section[style*="margin-top"] {
+    margin-top: 0 !important;
+}
+
+.section-bg-alt {
+    margin-top: 0 !important;
+}
+
+/* Prevent Hero Section overlaps/underlaps */
+.hero-section,
+section[style*="min-height"],
+section[style*="background:"] {
+    margin-top: 0 !important;
+}
+
+/* Services Section - Tablet 2x2 Grid */
+/* Service Cards Responsive Grid */
+
+/* Services Section - Responsive Grid */
+
+/* Desktop - 3 columns (6 cards in 2 rows) */
+@media (min-width: 1025px) {
+    #services .card-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
+}
+
+/* Tablet - 2 columns (6 cards in 3 rows) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #services .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+}
+
+/* Mobile - 1 column (6 cards stacked) */
+@media (max-width: 600px) {
+    #services .card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+}
+
+/* Pricing Tiers - Desktop 3 columns FORCE */
+@media (min-width: 1000px) {
+
+    section#pricing-tiers .card-grid,
+    #pricing-tiers>.container>.card-grid,
+    #pricing-tiers .card-grid[style],
+    section[id="pricing-tiers"] .card-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+}
+
+/* CRITICAL: Override for 1024px screens specifically */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    #pricing-tiers .card-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* Pricing Tiers - Tablet - 3rd card centered */
+@media (max-width: 999px) and (min-width: 601px) {
+    #pricing-tiers .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #pricing-tiers .card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: 50%;
+        margin: 0 auto;
+        justify-self: center;
+    }
+}
+
+/* Pricing Tiers - Mobile 1 column */
+@media (max-width: 600px) {
+    #pricing-tiers .card-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Pricing Grid Styles */
+.pricing-grid {
+    align-items: stretch;
+    margin-top: 24px;
+}
+
+@media (min-width: 1025px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
 }
