@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | RepairHub</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .welcome-card {
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .welcome-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .welcome-icon {
+            background: var(--card-bg);
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .recent-bookings {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-top: 24px;
+            overflow: hidden;
+        }
+
+        .rb-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rb-item {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rb-item:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 600px) {
+            .rb-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .rb-item-actions {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .welcome-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="brand">
+                    <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo">
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active">
+                    <i class="fa-solid fa-house"></i> Dashboard
+                </a>
+                <a href="booking-history.html" class="sidebar-link">
+                    <i class="fa-solid fa-clock-rotate-left"></i> History
+                </a>
+                <a href="index.html" class="sidebar-link text-primary" style="margin-top: auto; color: #EF4444;">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <span class="user-name">Alex Doe</span>
+                    <span class="user-role">alex.doe@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <div class="flex items-center gap-2">
+                    <button class="icon-btn sidebar-toggle" aria-label="Menu" style="display: none;">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Dashboard</h2>
+                </div>
+                <div class="nav-actions">
+                    <button class="icon-btn rtl-toggle desktop-only" aria-label="Toggle RTL" title="ع/EN">
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <button class="icon-btn theme-toggle desktop-only" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="dashboard-content">
+                <!-- Welcome -->
+                <div class="welcome-card">
+                    <div class="welcome-icon">
+                        <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    <div>
+                        <h2 style="margin-bottom: 8px; text-align: left;">Welcome back, Alex!</h2>
+                        <p style="margin: 0; color: var(--text-secondary);">Your bike is in good hands. What would you
+                            like to do today?</p>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="card-grid"
+                    style="margin-top: 0; margin-bottom: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;"><i
+                                class="fa-solid fa-calendar-check"></i></div>
+                        <div>
+                            <p style="margin: 0; font-size: 1.0rem; color: var(--text-secondary);">Active Bookings</p>
+                            <h3 style="margin: 0; font-size: 1.5rem;">1</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10B981;"><i
+                                class="fa-solid fa-check-double"></i></div>
+                        <div>
+                            <p style="margin: 0; font-size: 1.0rem; color: var(--text-secondary);">Completed</p>
+                            <h3 style="margin: 0; font-size: 1.5rem;">5</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i
+                                class="fa-solid fa-calendar-days"></i></div>
+                        <div>
+                            <p style="margin: 0; font-size: 1.0rem; color: var(--text-secondary);">Next Service</p>
+                            <h3 style="margin: 0; font-size: 1.2rem;">Oct 12, 2024</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2 mb-4" style="flex-wrap: wrap;">
+                    <a href="services.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Book New Repair</a>
+                    <a href="#" class="btn btn-outline"><i class="fa-solid fa-location-crosshairs"></i> Track
+                        Service</a>
+                </div>
+
+                <!-- Recent Bookings -->
+                <div class="recent-bookings">
+                    <div class="rb-header">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Recent Bookings</h3>
+                        <a href="booking-history.html" class="text-primary font-weight-bold"
+                            style="font-size: 0.9rem;">View All History &rarr;</a>
+                    </div>
+
+                    <div class="rb-item">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 4px;">Premium Overhaul</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);"><i
+                                    class="fa-regular fa-calendar"></i> Oct 12, 2024 at 10:00 AM</div>
+                        </div>
+                        <div class="rb-item-actions">
+                            <span class="badge badge-yellow">Pending</span>
+                            <a href="#" class="text-primary" style="margin-left: 16px;">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="rb-item">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 4px;">Brake Service</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);"><i
+                                    class="fa-regular fa-calendar"></i> Sep 05, 2024</div>
+                        </div>
+                        <div class="rb-item-actions">
+                            <span class="badge badge-green">Completed</span>
+                            <a href="#" class="text-primary" style="margin-left: 16px;">Receipt</a>
+                        </div>
+                    </div>
+
+                    <div class="rb-item">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 4px;">Standard Service</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);"><i
+                                    class="fa-regular fa-calendar"></i> May 22, 2024</div>
+                        </div>
+                        <div class="rb-item-actions">
+                            <span class="badge badge-green">Completed</span>
+                            <a href="#" class="text-primary" style="margin-left: 16px;">Receipt</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Adjust for mobile view Sidebar Toggle CSS Fixes inline for dashboard
+        const toggleRule = document.querySelector('.sidebar-toggle');
+        if (window.innerWidth <= 1024) {
+            toggleRule.style.display = 'block';
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 1024) {
+                toggleRule.style.display = 'block';
+            } else {
+                toggleRule.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

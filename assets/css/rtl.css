@@ -1,0 +1,66 @@
+/* RTL Specific Overrides for elements where logical properties are not enough */
+
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .dashboard-main {
+    margin-left: 0;
+    margin-right: 260px;
+}
+
+[dir="rtl"] .sidebar-link {
+    border-right: none;
+}
+
+[dir="rtl"] .sidebar-link:hover, 
+[dir="rtl"] .sidebar-link.active {
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Auth Forms */
+[dir="rtl"] .input-icon {
+    left: auto;
+    right: 16px;
+}
+
+[dir="rtl"] .form-control {
+    padding-left: calc(var(--spacing-unit) * 2);
+    padding-right: calc(var(--spacing-unit) * 5);
+}
+
+/* Adjust layout direction */
+[dir="rtl"] .nav-actions {
+    flex-direction: row-reverse;
+}
+
+/* Navbar logo to right, menu left */
+[dir="rtl"] .navbar .container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-menu {
+    left: auto;
+    right: 0;
+}
+
+@media (max-width: 1024px) {
+    [dir="rtl"] .dashboard-main {
+        margin-right: 0;
+    }
+    
+    [dir="rtl"] .sidebar {
+        transform: translateX(100%);
+    }
+    
+    [dir="rtl"] .sidebar.show {
+        transform: translateX(0);
+    }
+}

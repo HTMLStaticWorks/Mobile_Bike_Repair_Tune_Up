@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  
+  <!-- Background (optional remove if you want transparent) -->
+  <rect width="48" height="48" rx="10" fill="#22c55e"></rect>
+  
+  <!-- Icon -->
+  <g fill="white">
+    <circle cx="14" cy="32" r="5"></circle>
+    <circle cx="34" cy="32" r="5"></circle>
+    <path d="M14 32 L24 18 L34 32" stroke="white" stroke-width="2" fill="none"></path>
+    <circle cx="24" cy="14" r="3"></circle>
+  </g>
+
+</svg>

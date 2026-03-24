@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepairHub | Ultimate Bike Care</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .horizontal-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .horizontal-card:hover {
+            transform: scale(1.02);
+        }
+
+        .hc-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 24px;
+            border-radius: var(--border-radius);
+        }
+
+        @media (max-width: 600px) {
+            .horizontal-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            padding: 24px;
+            background: var(--card-bg);
+            text-align: left;
+        }
+
+        .faq-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        [dir="rtl"] .faq-item,
+        [dir="rtl"] .faq-item h4 {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex justify-between items-center" style="height: 100%;">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <!-- Desktop only - theme and RTL -->
+                <button class="icon-btn rtl-toggle desktop-only" aria-label="Toggle RTL" title="ع/EN">
+                    <i class="fa-solid fa-language"></i>
+                </button>
+                <button class="icon-btn theme-toggle desktop-only" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary desktop-only">Login</a>
+
+                <!-- Mobile/Tablet only - hamburger -->
+                <button class="icon-btn hamburger mobile-only" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo">
+            </a>
+            <button class="close-sidebar" aria-label="Close Menu">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-sidebar-nav">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="home2.html" class="mobile-nav-link active">Home 2</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+        </nav>
+        <div class="mobile-sidebar-actions">
+            <a href="login.html" class="btn btn-primary btn-full">
+                <i class="fa-solid fa-right-to-bracket"></i> Login
+            </a>
+            <button class="btn btn-outline btn-full rtl-toggle-mobile"
+                style="display: flex; gap: 8px; justify-content: center;">
+                <i class="fa-solid fa-language"></i> RTL
+            </button>
+            <button class="btn btn-outline btn-full theme-toggle-mobile"
+                style="display: flex; gap: 8px; justify-content: center;">
+                <i class="fa-solid fa-moon"></i> Dark
+            </button>
+        </div>
+    </div>
+    <div class="mobile-sidebar-overlay"></div>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Section (Fullscreen Image Focus) -->
+        <section
+            style="height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1920&q=80') center/cover; position: relative;">
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+            <div class="container text-center" style="position: relative; z-index: 10;">
+                <h1 class="fade-in" style="font-size: 4rem; color: white; margin-bottom: 24px;">Mobile Mechanics for
+                    Modern Riders</h1>
+                <p class="fade-in delay-1"
+                    style="font-size: 1.3rem; color: #E2E8F0; max-width: 600px; margin: 0 auto 40px;">Quality repairs
+                    without the wait. Book now and we'll come to your door.</p>
+                <a href="register.html" class="btn btn-primary btn-lg fade-in delay-2"
+                    style="font-size: 1.2rem; padding: 20px 48px; border-radius: 50px;">Start Your Booking</a>
+
+                <div class="fade-in delay-3"
+                    style="position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); color: white; animation: bounce 2s infinite;">
+                    <i class="fa-solid fa-chevron-down" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Horizontal Service Cards -->
+        <section id="services-alt">
+            <div class="container">
+                <h2>Our Expertise</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="horizontal-card">
+                        <div class="hc-icon"><i class="fa-solid fa-wrench"></i></div>
+                        <div style="text-align: center; flex-grow: 1;">
+                            <h3 style="text-align: center; margin-bottom: 8px;">Comprehensive Tune-Ups</h3>
+                            <p style="margin: 0;">Complete adjustment of gears and brakes, safety checking all bolts,
+                                and drivetrain lubrication for a completely smooth ride.</p>
+                        </div>
+                        <div>
+                            <a href="services.html" class="btn btn-outline" style="white-space: nowrap;">Book $49</a>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-card">
+                        <div class="hc-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                        <div style="text-align: center; flex-grow: 1;">
+                            <h3 style="text-align: center; margin-bottom: 8px;">Precision Brake Services</h3>
+                            <p style="margin: 0;">Hydraulic bleeds, pad replacements, and rotor truing ensuring you can
+                                stop safely in any weather condition.</p>
+                        </div>
+                        <div>
+                            <a href="services.html" class="btn btn-outline" style="white-space: nowrap;">Book $39</a>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-card">
+                        <div class="hc-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+                        <div style="text-align: center; flex-grow: 1;">
+                            <h3 style="text-align: center; margin-bottom: 8px;">Wheel Setup & Tires</h3>
+                            <p style="margin: 0;">Fast flat repair, tubeless conversion, hub bearing adjustments, and
+                                wheel truing for perfect rolling resistance.</p>
+                        </div>
+                        <div>
+                            <a href="services.html" class="btn btn-outline" style="white-space: nowrap;">Book $29</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Split Content (Why Choose Us) -->
+        <section id="why" class="section-bg-alt">
+            <div class="container split-section">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=800&q=80"
+                        alt="Mechanic working on bike"
+                        style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+                <div
+                    style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h2 style="text-align: center; margin-bottom: 24px;">Why Ride With Us?</h2>
+                    <p style="margin-bottom: 24px; font-size: 1.1rem; text-align: center; max-width: 500px;">We've
+                        revolutionized bike maintenance. No more
+                        dragging your bike to the shop. No more waiting days for a simple tune-up.</p>
+
+                    <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+                        <li style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div
+                                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">Lightning
+                                Fast Service</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div
+                                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <span style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">Certified
+                                Expert Mechanics</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div
+                                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <span style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary);">We Come To
+                                Your Driveway</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Booking Preview -->
+        <section class="section-bg-alt">
+            <div class="container">
+                <h2>Instant Booking Preview</h2>
+                <p style="max-width: 600px; margin: 0 auto 32px;">Experience how easy it is to schedule your repair
+                    right now.</p>
+
+                <div
+                    style="background: var(--card-bg); padding: 40px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); max-width: 800px; margin: 0 auto;">
+                    <div class="split-section" style="gap: 24px;">
+                        <div class="form-group text-left">
+                            <label class="form-label">Select Service</label>
+                            <select class="form-control">
+                                <option>Standard Tune-Up</option>
+                                <option>Premium Overhaul</option>
+                                <option>Flat Fix</option>
+                            </select>
+                        </div>
+                        <div class="form-group text-left">
+                            <label class="form-label">Your Postcode</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-map-pin input-icon"></i>
+                                <input type="text" class="form-control" placeholder="e.g. 10001">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-full" style="margin-top: 16px;">Check Availability
+                        &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do I need to be home during the repair?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we require someone to be present to unlock the bike and sign off on the completed work,
+                            unless prior arrangements (like garage access) are made.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What if my repair requires special parts?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our vans carry hundreds of common parts. If you need something highly specific, our mechanic
+                            will diagnose the issue, order the part, and schedule a quick follow-up visit.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you offer warranties on your service?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. All labor is backed by a 30-day guarantee. If something doesn't feel right after
+                            we leave, we'll make it right at no extra cost.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does a typical repair take?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Most basic tune-ups take 45-60 minutes. More comprehensive services like full overhauls can
+                            take 1.5-2 hours. We'll give you an estimated time when you book.
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you have a cancellation policy?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            You can cancel or reschedule free of charge up to 24 hours before your appointment.
+                            Cancellations within 24 hours may incur a $25 service fee.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .faq-item {
+                border: 1px solid var(--border-color);
+                border-radius: var(--border-radius);
+                margin-bottom: 16px;
+                background: var(--card-bg);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .faq-question {
+                padding: 24px;
+                font-weight: 600;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: var(--bg-color-alt);
+                transition: all 0.3s ease;
+                user-select: none;
+            }
+
+            .faq-question:hover {
+                background: var(--bg-color);
+            }
+
+            .faq-question i {
+                transition: transform 0.3s ease;
+                color: var(--primary-color);
+            }
+
+            .faq-item.active .faq-question i {
+                transform: rotate(180deg);
+            }
+
+            .faq-answer {
+                padding: 0 24px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                color: var(--text-secondary);
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 24px 24px;
+                max-height: 500px;
+            }
+
+            [dir="rtl"] .faq-question {
+                text-align: right;
+            }
+        </style>
+
+        <script>
+            // FAQ Accordion functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const wasActive = faqItem.classList.contains('active');
+
+                    // Close all FAQs
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // Toggle clicked FAQ
+                    if (!wasActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+
+            // Open first FAQ by default
+            document.querySelector('.faq-item')?.classList.add('active');
+        </script>
+        <!-- CTA -->
+        <section style="background: var(--secondary-color); color: white; border-bottom: none;">
+            <div class="container text-center">
+                <h2 style="color: white; font-size: 2.5rem;">Join Thousands of Happy Cyclists</h2>
+                <p style="color: #94A3B8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px;">Don't let a poorly
+                    maintained bike hold you back.</p>
+                <div class="flex gap-2 justify-center flex-wrap">
+                    <a href="register.html" class="btn btn-primary btn-lg"
+                        style="font-size: 1.1rem; padding: 16px 32px;">Create Free Account</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand" style="margin-bottom: 16px; display: inline-flex;">
+                        <img src="assets/images/logo.svg" alt="RepairHub Logo" class="brand-logo" style="height: 42px;">
+                    </a>
+                    <p style="color: #94A3B8; font-size: 0.9rem;">Bike repair at your doorstep. We bring the shop to
+                        you.</p>
+                    <div class="flex gap-2 mt-4">
+                        <a href="#" class="icon-btn" style="background: rgba(255,255,255,0.1); color: white;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon-btn" style="background: rgba(255,255,255,0.1); color: white;"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="icon-btn" style="background: rgba(255,255,255,0.1); color: white;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 style="font-weight: 600; font-size: 1.1rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 style="font-weight: 600; font-size: 1.1rem;">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 style="font-weight: 600; font-size: 1.1rem;">Contact</h4>
+                    <ul class="footer-links" style="color: #94A3B8;">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary"></i>
+                            hello@repairhub.com</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary"></i> +1 234 567
+                            8900</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary"></i> 123
+                            Bike Lane, City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 RepairHub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <style>
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            40% {
+                transform: translate(-50%, -20px);
+            }
+
+            60% {
+                transform: translate(-50%, -10px);
+            }
+        }
+    </style>
+</body>
+
+</html>
