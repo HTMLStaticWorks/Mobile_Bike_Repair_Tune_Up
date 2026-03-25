@@ -142,9 +142,6 @@
                 <a href="booking-history.html" class="sidebar-link">
                     <i class="fa-solid fa-clock-rotate-left"></i> History
                 </a>
-                <div class="sidebar-link rtl-toggle mobile-only">
-                    <i class="fa-solid fa-language"></i> RTL Mode
-                </div>
                 <a href="index.html" class="sidebar-link text-primary" style="margin-top: auto; color: #EF4444;">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
                 </a>
@@ -162,12 +159,10 @@
         <main class="dashboard-main">
             <!-- Topbar -->
             <header class="dashboard-topbar">
-                <div class="flex items-center gap-2">
-                    <button class="icon-btn sidebar-toggle" aria-label="Menu" style="display: none;">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                    <h2 style="margin: 0; font-size: 1.25rem;">Dashboard</h2>
-                </div>
+                <button class="icon-btn sidebar-toggle" aria-label="Menu" style="display: none;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2>Dashboard</h2>
                 <div class="nav-actions">
                     <button class="icon-btn rtl-toggle mobile-only" aria-label="Toggle RTL" title="ع/EN">
                         <i class="fa-solid fa-language"></i>
@@ -282,11 +277,11 @@
     <script>
         // Adjust for mobile view Sidebar Toggle CSS Fixes inline for dashboard
         const toggleRule = document.querySelector('.sidebar-toggle');
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth < 1024) {
             toggleRule.style.display = 'block';
         }
         window.addEventListener('resize', () => {
-            if (window.innerWidth <= 1024) {
+            if (window.innerWidth < 1024) {
                 toggleRule.style.display = 'block';
             } else {
                 toggleRule.style.display = 'none';

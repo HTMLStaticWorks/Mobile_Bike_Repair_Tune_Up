@@ -546,11 +546,26 @@ section {
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 calc(var(--spacing-unit) * 3);
     position: sticky;
     top: 0;
-    z-index: 90;
+    z-index: 1000;
+}
+
+.dashboard-topbar .sidebar-toggle {
+    margin-inline-end: auto;
+}
+
+.dashboard-topbar h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 !important;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    pointer-events: none;
+    z-index: 10;
 }
 
 .dashboard-content {
