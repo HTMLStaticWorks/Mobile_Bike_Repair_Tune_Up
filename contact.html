@@ -25,9 +25,22 @@
             margin-bottom: 64px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1023px) {
             .contact-layout {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 601px) {
+            .contact-info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .contact-card {
+                margin-bottom: 0;
+                height: 100%;
             }
         }
 
@@ -194,16 +207,16 @@
     </div>
     <div class="mobile-sidebar-overlay"></div>
 
-    <main style="margin-top: 80px;">
+    <main style="margin-top: 0;">
         <!-- Hero Banner -->
-        <section style="background: var(--secondary-color); color: white; padding: 60px 0;">
+        <section
+            style="background: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1920&q=80') center/cover; color: white; min-height: 30vh; display: flex; align-items: center; justify-content: center; margin-top: 80px;">
             <div class="container text-center">
                 <h1 style="color: white; font-size: 3rem; margin-bottom: 16px;">Get In Touch</h1>
-                <p style="font-size: 1.1rem; color: #94A3B8; max-width: 600px; margin: 0 auto;">Have a question?
+                <p style="font-size: 1.1rem; color: #E2E8F0; max-width: 600px; margin: 0 auto;">Have a question?
                     Experiencing issues with your bike? We're here to help.</p>
             </div>
         </section>
-
         <!-- Contact Form & Cards -->
         <section class="section-bg-alt" style="padding-top: 60px;">
             <div class="container">
@@ -229,6 +242,15 @@
                                         placeholder="+1 (555) 000-0000" required>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contactPhone"> Alternate Phone Number</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-phone input-icon"></i>
+                                    <input type="tel" id="contactPhone" class="form-control"
+                                        placeholder="+1 (555) 000-0000" required>
+                                </div>
+                            </div>
+
 
                             <div class="form-group">
                                 <label class="form-label" for="contactEmail">Email Address</label>
@@ -268,62 +290,54 @@
                     </div>
 
                     <!-- Right: Cards -->
-                    <div>
+                    <div class="contact-info-section">
                         <h3 style="text-align:center; margin-bottom: 24px;">Contact Information</h3>
-
-                        <div class="contact-card">
-                            <div class="cc-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="cc-content">
-                                <h4 style="text-align: center;">Call us</h4>
-                                <p>+1 234 567 8900</p>
+                        <div class="contact-info-grid">
+                            <div class="contact-card">
+                                <div class="cc-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="cc-content">
+                                    <h4 style="text-align: center;">Call us</h4>
+                                    <p>+1 234 567 8900</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="contact-card">
-                            <div class="cc-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="cc-content">
-                                <h4 style="text-align: center;">Email us</h4>
-                                <p>hello@repairhub.com</p>
+                            <div class="contact-card">
+                                <div class="cc-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="cc-content">
+                                    <h4 style="text-align: center;">Email us</h4>
+                                    <p>hello@repairhub.com</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="contact-card">
-                            <div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="cc-content">
-                                <h4 style="text-align: center;">Visit us (HQ)</h4>
-                                <p style="font-size: 1rem;">123 Bike Lane, Cycling City, CA 90210</p>
+                            <div class="contact-card">
+                                <div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="cc-content">
+                                    <h4 style="text-align: center;">Visit us (HQ)</h4>
+                                    <p style="font-size: 1rem;">123 Bike Lane, Cycling City, CA 90210</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="contact-card">
-                            <div class="cc-icon"><i class="fa-solid fa-clock"></i></div>
-                            <div class="cc-content">
-                                <h4 style="text-align: center;">Business Hours</h4>
-                                <p style="font-size: 0.95rem;">Mon-Fri: 8am - 8pm<br>Sat-Sun: 9am - 6pm</p>
-                            </div>
-                        </div>
-
-                        <!-- Follow Us Card -->
-                        <!-- Follow Us Card - Centered -->
-                        <div class="contact-card" style="flex-direction: column; align-items: center;">
-                            <div class="cc-icon"><i class="fa-solid fa-share-nodes"></i></div>
-                            <div class="cc-content">
-                                <h4 style="text-align: center;">Follow Us</h4>
-                            </div>
-                            <div class="social-links"
-                                style="display: flex; gap: 12px; margin-top: 12px; padding-left: 0;">
-                                <a href="#" class="social-icon-link" aria-label="Facebook">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-icon-link" aria-label="Twitter">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-icon-link" aria-label="Instagram">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="#" class="social-icon-link" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
+                            <!-- Follow Us Card - Centered -->
+                            <div class="contact-card" style="flex-direction: column; align-items: center;">
+                                <div class="cc-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                                <div class="cc-content">
+                                    <h4 style="text-align: center;">Follow Us</h4>
+                                </div>
+                                <div class="social-links"
+                                    style="display: flex; gap: 12px; margin-top: 12px; padding-left: 0;">
+                                    <a href="#" class="social-icon-link" aria-label="Facebook">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-icon-link" aria-label="Twitter">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon-link" aria-label="Instagram">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-icon-link" aria-label="LinkedIn">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

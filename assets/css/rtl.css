@@ -36,22 +36,14 @@
     padding-right: calc(var(--spacing-unit) * 5);
 }
 
-/* Adjust layout direction */
-[dir="rtl"] .nav-actions {
-    flex-direction: row-reverse;
-}
-
-/* Navbar logo to right, menu left */
-[dir="rtl"] .navbar .container {
-    flex-direction: row-reverse;
-}
+/* Navbar RTL Support - Let natural RTL flow handle position switching */
 
 [dir="rtl"] .mobile-menu {
     left: auto;
     right: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     [dir="rtl"] .dashboard-main {
         margin-right: 0;
     }

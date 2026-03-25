@@ -142,6 +142,13 @@
                     <i class="fa-solid fa-times"></i>
                 </button>
             </div>
+            <div class="sidebar-user" style="padding: 20px 24px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">AD</div>
+                <div class="user-info">
+                    <div class="user-name" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Alex Doe</div>
+                    <div class="user-role" style="font-size: 0.75rem; color: var(--text-secondary);">alex.doe@example.com</div>
+                </div>
+            </div>
             <nav class="sidebar-nav">
                 <a href="dashboard.html" class="sidebar-link">
                     <i class="fa-solid fa-house"></i> Dashboard
@@ -149,16 +156,11 @@
                 <a href="booking-history.html" class="sidebar-link active">
                     <i class="fa-solid fa-clock-rotate-left"></i> History
                 </a>
-                <a href="index.html" class="sidebar-link" style="margin-top: auto; color: #EF4444;">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
-                </a>
             </nav>
             <div class="sidebar-footer">
-                <div class="user-avatar">AD</div>
-                <div class="user-info">
-                    <span class="user-name">Alex Doe</span>
-                    <span class="user-role">alex.doe@example.com</span>
-                </div>
+                <a href="index.html" class="sidebar-link" style="color: #EF4444; width: 100%; border-inline-end: none;">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </a>
             </div>
         </aside>
 

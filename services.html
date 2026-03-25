@@ -4,150 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover the journey behind RepairHub. Meet our expert mechanics and explore our mobile bike repair process.">
     <title>Our Services | RepairHub</title>
-    <!-- Favicon -->
+
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="apple-touch-icon" href="assets/images/favicon.svg">
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Icons -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS -->
+
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <style>
-        .service-card-lg {
-            background: var(--card-bg);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            display: grid;
-            grid-template-columns: auto 1fr 200px;
-            gap: 32px;
-            margin-bottom: 24px;
-            align-items: center;
-        }
-
-        @media (max-width: 1024px) {
-            .service-card-lg {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .sc-icon {
-                margin: 0 auto;
-            }
-
-            .sc-features {
-                text-align: left;
-                margin: 0 auto;
-                display: inline-block;
-            }
-
-            [dir="rtl"] .sc-features {
-                text-align: right;
-            }
-        }
-
-        .sc-icon {
-            width: 100px;
-            height: 100px;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .sc-content h3 {
-            text-align: left;
-            margin-bottom: 12px;
-        }
-
-        [dir="rtl"] .sc-content h3 {
-            text-align: right;
-        }
-
-        .sc-content p {
-            text-align: left;
-            margin-bottom: 16px;
-        }
-
-        [dir="rtl"] .sc-content p {
-            text-align: right;
-        }
-
-        .sc-features {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            text-align: left;
-        }
-
-        [dir="rtl"] .sc-features {
-            text-align: right;
-        }
-
-        .sc-action {
-            text-align: right;
-            border-left: 1px solid var(--border-color);
-            padding-left: 32px;
-        }
-
-        [dir="rtl"] .sc-action {
-            text-align: left;
-            border-left: none;
-            border-right: 1px solid var(--border-color);
-            padding-left: 0;
-            padding-right: 32px;
-        }
-
-        @media (max-width: 1024px) {
-            .sc-action {
-                text-align: center;
-                border-left: none;
-                padding-left: 0;
-                border-top: 1px solid var(--border-color);
-                padding-top: 32px;
-            }
-
-            [dir="rtl"] .sc-action {
-                border-right: none;
-                padding-right: 0;
-            }
-        }
-
-        .faq-accordion .faq-item {
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            margin-bottom: 16px;
-            background: var(--card-bg);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 24px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-color-alt);
-        }
-
-        .faq-answer {
-            padding: 0 24px 24px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/services-premium.css">
 </head>
 
-<body>
+<body data-theme="light">
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container flex justify-between items-center" style="height: 100%;">
@@ -217,180 +96,233 @@
     </div>
     <div class="mobile-sidebar-overlay"></div>
 
-    <main style="margin-top: 80px;">
-        <!-- Hero Banner -->
-        <section
-            style="background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1475666675596-cca2035b3d79?auto=format&fit=crop&w=1920&q=80') center/cover; color: white; padding: 120px 0;">
-            <div class="container text-center">
-                <h1
-                    style="color: white; font-size: 3rem; margin-bottom: 16px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-                    Our Services</h1>
-                <p
-                    style="font-size: 1.2rem; color: #E2E8F0; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
-                    Comprehensive mobile bike repair tailored to your needs. We bring the expertise directly to you.</p>
-            </div>
-        </section>
-
-        <!-- Service List -->
-        <section class="section-bg-alt">
-            <div class="container">
-                <div class="service-card-lg">
-                    <div class="sc-icon"><i class="fa-solid fa-check-double"></i></div>
-                    <div class="sc-content">
-                        <h3 style="text-align: center;">Comprehensive Tune-Up</h3>
-                        <p style="text-align: center;">Our most popular service. Designed to keep your bike running
-                            smoothly and safely. We adjust
-                            all critical components and ensure your bike feels like it just rolled out of the showroom.
-                            Perfect for pre-season checks or regular maintenance.</p>
-                        <ul class="sc-features">
-                            <li><i class="fa-solid fa-check text-primary"></i> Gear & Brake Adjust</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Drivetrain Clean</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Safety Bolt Check</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Tire Inflation</li>
-                        </ul>
-                    </div>
-                    <div class="sc-action text-right">
-                        <div style="font-size: 0.9rem; color: var(--text-secondary);">Starting at</div>
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px;">
-                            $49</div>
-                        <a href="dashboard.html" class="btn btn-primary btn-full" style="justify-content: center;">Book
-                            This</a>
-                    </div>
-                </div>
-
-                <div class="service-card-lg">
-                    <div class="sc-icon"><i class="fa-solid fa-compact-disc"></i></div>
-                    <div class="sc-content">
-                        <h3 style="text-align: center;">Advanced Brake Service</h3>
-                        <p style="text-align: center;">Don't compromise on safety. Whether you have rim brakes or
-                            hydraulic discs, our mechanics
-                            ensure optimal stopping power. We fix squeaks, improve lever feel, and replace worn
-                            components on site.</p>
-                        <ul class="sc-features">
-                            <li><i class="fa-solid fa-check text-primary"></i> Hydraulic Bleed</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Pad Replacement</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Cable Replacement</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Rotor Truing</li>
-                        </ul>
-                    </div>
-                    <div class="sc-action text-right">
-                        <div style="font-size: 0.9rem; color: var(--text-secondary);">Starting at</div>
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px;">
-                            $35</div>
-                        <a href="dashboard.html" class="btn btn-primary btn-full" style="justify-content: center;">Book
-                            This</a>
-                    </div>
-                </div>
-
-                <div class="service-card-lg">
-                    <div class="sc-icon"><i class="fa-solid fa-dharmachakra"></i></div>
-                    <div class="sc-content">
-                        <h3 style="text-align: center;">Wheel & Tire Setup</h3>
-                        <p style="text-align: center;">Wheels taking a beating? From simple flat fixes right where you
-                            are stranded, to complex
-                            tubeless conversions. We ensure your wheels are true and tires are seated perfectly for low
-                            rolling resistance.</p>
-                        <ul class="sc-features">
-                            <li><i class="fa-solid fa-check text-primary"></i> Flat Repair</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Tubeless Conversion</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Wheel Truing</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Hub Adjustments</li>
-                        </ul>
-                    </div>
-                    <div class="sc-action text-right">
-                        <div style="font-size: 0.9rem; color: var(--text-secondary);">Starting at</div>
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px;">
-                            $25</div>
-                        <a href="dashboard.html" class="btn btn-primary btn-full" style="justify-content: center;">Book
-                            This</a>
-                    </div>
-                </div>
-
-                <div class="service-card-lg">
-                    <div class="sc-icon"><i class="fa-solid fa-gear"></i></div>
-                    <div class="sc-content">
-                        <h3 style="text-align: center;">Drivetrain Overhaul</h3>
-                        <p style="text-align: center;">Skipping gears or grinding noises? We strip your drivetrain,
-                            degrease it thoroughly, measure
-                            chain wear, and re-lubricate everything. We will replace your cassette and chain if needed
-                            to restore perfect shifting.</p>
-                        <ul class="sc-features">
-                            <li><i class="fa-solid fa-check text-primary"></i> Ultrasonic Clean</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Chain Replacement</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Cassette Swap</li>
-                            <li><i class="fa-solid fa-check text-primary"></i> Derailleur Alignment</li>
-                        </ul>
-                    </div>
-                    <div class="sc-action text-right">
-                        <div style="font-size: 0.9rem; color: var(--text-secondary);">Starting at</div>
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px;">
-                            $69</div>
-                        <a href="dashboard.html" class="btn btn-primary btn-full" style="justify-content: center;">Book
-                            This</a>
-                    </div>
+    <!-- Services Hero -->
+    <section id="services-hero" class="section-padding"
+        style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 45%); min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden; margin-top: 80px;">
+        <!-- Animated Background Decor -->
+        <div class="floating-blob-premium"
+            style="position: absolute; width: 300px; height: 300px; top: -100px; right: -50px; background: var(--primary-color); opacity: 0.15; z-index: 0; border-radius: 50%; animation: blob-morph 3s infinite alternate;">
+        </div>
+        <div class="container hero-grid" style="position: relative; z-index: 1;">
+            <div class="reveal-content">
+                <h1 class="premium-reveal stagger-1"
+                    style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 2rem;">
+                    Beyond Just <br><span style="color: var(--primary-color);">Repairs.</span></h1>
+                <p class="large-text premium-reveal stagger-2"
+                    style="font-size: 1.3rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
+                    "Fixing bikes was never just a job for us. It was a
+                    way to keep cyclists safe, a way to bring the joy of riding to everyone, one repair at a time."</p>
+                <div class="premium-reveal stagger-3">
+                    <a href="#process" class="btn btn-primary btn-lg"><i class="fa-solid fa-arrow-down"></i> Explore Our
+                        Process</a>
                 </div>
             </div>
-        </section>
+            <div class="premium-reveal stagger-4 author-frame-premium" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+                    alt="RepairHub mechanic at work"
+                    style="width: 100%; border-radius: var(--border-radius-lg); z-index: 2; box-shadow: var(--shadow-lg);">
+                <div class="floating-blob floating-blob-premium"
+                    style="top: -20px; left: -20px; background: var(--primary-color); opacity: 0.1; width: 100%; height: 100%; border-radius: var(--border-radius-lg); transform: rotate(5deg); z-index: -1; position: absolute;">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- FAQ Accordion -->
-        <section>
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-accordion" style="max-width: 800px; margin: 0 auto; text-align: left;">
-                    <div class="faq-item">
-                        <div class="faq-question">How long does a repair take? <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer mt-2">Most standard tune-ups take between 45 to 60 minutes. Complex
-                            repairs or full overhauls can take up to 2 hours. Our mechanics work efficiently right at
-                            your location.</div>
+    <!-- Creative Process Section (Premium Layout) -->
+    <section class="section-padding" id="process" style="background: var(--bg-color-alt);">
+        <div class="container">
+            <div class="text-center mb-4 premium-reveal stagger-1">
+                <span class="book-tag"
+                    style="background: rgba(16, 185, 129, 0.1); color: var(--primary-color); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem;">The
+                    Workflow</span>
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Excellence In
+                    Every Turn</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary); font-size: 1.1rem;">Step into
+                    our world of precision bike care. Here's how we bring your bike back to life.</p>
+            </div>
+
+            <div class="process-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+                <!-- Step 1 -->
+                <div class="process-card premium-reveal stagger-1"
+                    style="background: var(--card-bg); padding: 2.5rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow);">
+                    <div class="process-icon"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--primary-color);">
+                        <i class="fa-solid fa-clipboard-check"></i>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Do you come to my location? <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer mt-2">Yes! We are a 100% mobile service. We come to your home, office, or
-                            even if you're stranded on a local bike path within our service area.</div>
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">The Initial Check
+                    </h4>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">It starts with a thorough inspection. We
+                        assess every component—brakes, gears, tires, and frame—to understand exactly what your bike
+                        needs.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="process-card premium-reveal stagger-2"
+                    style="background: var(--card-bg); padding: 2.5rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow);">
+                    <div class="process-icon"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--primary-color);">
+                        <i class="fa-solid fa-toolbox"></i>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">What if I need parts? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer mt-2">Our vans are stocked with hundreds of standard parts (tubes, tires,
-                            chains, cables). If you need a special part, we can order it and schedule a quick return
-                            visit to install it.</div>
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Tools & Expertise
+                    </h4>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">Our mobile van arrives fully equipped.
+                        Professional-grade tools meet certified mechanics with years of training and experience.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="process-card premium-reveal stagger-3"
+                    style="background: var(--card-bg); padding: 2.5rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow);">
+                    <div class="process-icon"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--primary-color);">
+                        <i class="fa-solid fa-wrench"></i>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Do I pay before or after the service? <i
-                                class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer mt-2">You pay only after the service is completed and you are 100%
-                            satisfied. We accept all major credit cards and digital payments on-site.</div>
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Precision Repair
+                    </h4>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">We don't just fix—we restore. Every
+                        adjustment is measured, every part is tested, ensuring your bike performs like new.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission (Unique Layout: Centered Glass Card) -->
+    <section class="section-padding reveal"
+        style="background: url('https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 0;">
+        <div style="background: rgba(16, 185, 129, 0.85); padding: 5rem 0 2rem; backdrop-filter: blur(4px);">
+            <div class="container text-center" style="max-width: 800px; color: white;">
+                <h2 style="color: white; margin-bottom: 2rem; font-size: 2.5rem; font-weight: 800;">Our Mission</h2>
+                <p class="large-text"
+                    style="color: white; font-size: 1.5rem; font-style: italic; line-height: 1.8; margin-bottom: 3rem;">
+                    "To deliver premium mobile bike repair services that empower cyclists to ride safely, confidently,
+                    and joyfully—bringing expert care directly to your doorstep."</p>
+                <div class="mission-icons mt-3"
+                    style="display: flex; justify-content: space-around; gap: 2rem; flex-wrap: wrap;">
+                    <div class="mission-icon" style="text-align: center;">
+                        <i class="fa-solid fa-shield-halved"
+                            style="font-size: 3rem; color: white; display: block; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Safety First</p>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Is there a call-out fee? <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer mt-2">We have a transparent pricing policy. A diagnostic call-out fee of
-                            $25 applies, but this fee is completely waived if you proceed with any of our listed repair
-                            services.</div>
+                    <div class="mission-icon" style="text-align: center;">
+                        <i class="fa-solid fa-clock"
+                            style="font-size: 3rem; color: white; display: block; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Convenience</p>
+                    </div>
+                    <div class="mission-icon" style="text-align: center;">
+                        <i class="fa-solid fa-award"
+                            style="font-size: 3rem; color: white; display: block; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Quality</p>
+                    </div>
+                    <div class="mission-icon" style="text-align: center;">
+                        <i class="fa-solid fa-heart"
+                            style="font-size: 3rem; color: white; display: block; margin-bottom: 0.5rem;"></i>
+                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Passion</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Final CTA -->
-        <section
-            style="background: linear-gradient(135deg, var(--primary-color), #059669); color: white; border-bottom: none;">
-            <div class="container text-center">
-                <h2 style="color: white; font-size: 2.5rem;">Ready to Book?</h2>
-                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px;">
-                    Schedule your mobile mechanic in less than 2 minutes.</p>
-                <div class="flex gap-2 justify-center flex-wrap">
-                    <a href="register.html" class="btn btn-accent btn-lg"
-                        style="font-size: 1.1rem; padding: 16px 32px;">Start Booking</a>
+    <!-- Awards Section -->
+    <section class="section-padding"
+        style="background: var(--bg-color-alt); position: relative; overflow: hidden; padding: 1rem 0 3rem;">
+        <!-- Background Decoration -->
+        <div class="floating-element" style="position: absolute; top: -10%; right: -5%; opacity: 0.05;">
+            <svg width="400" height="400" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="100" fill="var(--primary-color)" />
+            </svg>
+        </div>
+
+        <div class="container reveal">
+            <div class="text-center">
+                <span class="book-tag"
+                    style="background: rgba(16, 185, 129, 0.1); color: var(--primary-color); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem;">Recognition</span>
+                <h2 class="mb-1" style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">
+                    Honors & Accolades</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary); font-size: 1.1rem;">
+                    Celebrating excellence in mobile bike repair, recognized by cycling communities and industry
+                    leaders.</p>
+            </div>
+
+            <div class="premium-award-grid"
+                style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem;">
+                <!-- Award 1 -->
+                <div class="premium-award-card reveal"
+                    style="transition-delay: 0.1s; background: var(--card-bg); padding: 3rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                    <div class="award-icon-wrapper"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary-color); transition: all 0.4s ease;">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700;">Best Mobile Service</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">2024 City Cycling Awards
+                            for Outstanding Mobile Repair Service</p>
+                    </div>
+                </div>
+                <!-- Award 2 -->
+                <div class="premium-award-card reveal"
+                    style="transition-delay: 0.2s; background: var(--card-bg); padding: 3rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                    <div class="award-icon-wrapper"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary-color); transition: all 0.4s ease;">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700;">Top Rated Business</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">4.9★ Average Rating from
+                            2,000+ Verified Customer Reviews</p>
+                    </div>
+                </div>
+                <!-- Award 3 -->
+                <div class="premium-award-card reveal"
+                    style="transition-delay: 0.3s; background: var(--card-bg); padding: 3rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                    <div class="award-icon-wrapper"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary-color); transition: all 0.4s ease;">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700;">Certified Excellence
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">All mechanics hold
+                            Professional Bicycle Mechanic Certification</p>
+                    </div>
+                </div>
+                <!-- Award 4 -->
+                <div class="premium-award-card reveal"
+                    style="transition-delay: 0.4s; background: var(--card-bg); padding: 3rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                    <div class="award-icon-wrapper"
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary-color); transition: all 0.4s ease;">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700;">Eco-Friendly Choice</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Green Business Certified
+                            for sustainable repair practices</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Final 
+    <section
+        style="background: linear-gradient(135deg, var(--primary-color), #059669); color: white; border-bottom: none; padding: 5rem 0;">
+        <div class="container text-center">
+            <h2 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Ready to Experience
+                Premium Care?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px;">
+                Book your mobile bike repair service today and discover the RepairHub difference.
+            </p>
+            <div class="flex gap-2 justify-center flex-wrap"
+                style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-lg"
+                    style="background: white; color: var(--primary-color); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: all 0.4s ease;">
+                    <i class="fa-solid fa-calendar-check"></i> Book Now
+                </a>
+                <a href="pricing.html" class="btn btn-lg"
+                    style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.4s ease;">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>  CTA -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -432,7 +364,6 @@
                     </ul>
                 </div>
 
-
                 <div class="footer-col">
                     <h4 style="font-weight: 600; font-size: 1.1rem;">Contact</h4>
                     <ul class="footer-links" style="color: #94A3B8;">
@@ -451,30 +382,148 @@
         </div>
     </footer>
 
+    <style>
+        @keyframes blob-morph {
+            0% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+
+            100% {
+                border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+                transform: rotate(180deg);
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 1023px) and (min-width: 601px) {
+            #services-hero {
+                margin-top: 80px !important;
+                padding-top: 3rem !important;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .process-card:nth-child(3) {
+                grid-column: 1 / -1;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .premium-award-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Specific fix for 1024px view spacing */
+        @media (min-width: 1024px) and (max-width: 1100px) {
+            #services-hero {
+                min-height: 50vh !important;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            #process {
+                padding-top: 3rem !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .premium-award-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .process-icon {
+            animation: spin-continuous 8s linear infinite;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes spin-continuous {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .process-card:hover .process-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .premium-award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), #059669);
+            opacity: 0;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .premium-award-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+            color: white;
+        }
+
+        .premium-award-card:hover::before {
+            opacity: 1;
+        }
+
+        .premium-award-card:hover .award-icon-wrapper {
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            transform: rotateY(360deg);
+        }
+
+        .premium-award-card:hover .award-icon-wrapper i {
+            color: #ffffff;
+        }
+
+        .premium-award-card:hover h4,
+        .premium-award-card:hover p {
+            color: white;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 4rem 0;
+            }
+        }
+    </style>
+
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Simple accordion logic
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                const icon = item.querySelector('i');
-                if (answer.style.display === 'none' || !answer.style.display) {
-                    answer.style.display = 'block';
-                    item.style.background = 'var(--bg-color)';
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    answer.style.display = 'none';
-                    item.style.background = 'var(--bg-color-alt)';
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
-        // Initial state
-        document.querySelectorAll('.faq-answer').forEach((answer, index) => {
-            if (index !== 0) answer.style.display = 'none'; // Only first one open by default
-        });
-    </script>
     <button class="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
