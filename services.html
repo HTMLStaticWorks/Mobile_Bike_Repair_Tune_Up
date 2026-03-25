@@ -184,6 +184,126 @@
         </div>
     </section>
 
+    <!-- Services We Provide Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-4">
+                <span class="book-tag"
+                    style="background: rgba(16, 185, 129, 0.1); color: var(--primary-color); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem;">Our
+                    Services</span>
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Services We
+                    Provide</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary); font-size: 1.1rem;">
+                    Professional mobile bike repair services brought directly to your doorstep.</p>
+            </div>
+
+            <div class="services-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+
+                <!-- Service 1: Basic Tune-Up -->
+                <div class="service-card"
+                    style="background: var(--card-bg); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: all 0.4s ease;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/image1.jpg" alt="Basic Tune-Up"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Basic Tune-Up
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Complete
+                            inspection, brakeing adjustment, gear tuning up, and lubrication. Perfect always for regular
+                            maintenance.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 1.8rem; font-weight: 800; color: var(--primary-color);">$49</span>
+                            <a href="pricing.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2: Complete Overhaul -->
+                <div class="service-card"
+                    style="background: var(--card-bg); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: all 0.4s ease;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/image2.jpg" alt="Complete Overhaul"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Complete
+                            Overhaul</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Full
+                            disassembly, deep cleaning, part replacement, and rebuild amd reuse much more. Ultimate bike
+                            restoration
+                            service.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 1.8rem; font-weight: 800; color: var(--primary-color);">$149</span>
+                            <a href="pricing.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Emergency Repair -->
+                <div class="service-card"
+                    style="background: var(--card-bg); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: all 0.4s ease;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/image3.jpg" alt="Emergency Repair"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Emergency Repair
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">24/7 roadside
+                            assistance for flat tires, broken chains, and we got you urgent fixes. no worries we'll We
+                            come to
+                            you fast.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 1.8rem; font-weight: 800; color: var(--primary-color);">$25</span>
+                            <a href="pricing.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .service-card:nth-child(3) {
+                grid-column: span 2;
+                max-width: calc(50% - 1.25rem);
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .services-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+
     <!-- Mission (Unique Layout: Centered Glass Card) -->
     <section class="section-padding reveal"
         style="background: url('https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=1920&q=80') center/cover; padding: 0;">
