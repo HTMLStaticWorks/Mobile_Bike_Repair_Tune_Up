@@ -166,6 +166,65 @@
         [dir="rtl"] .faq-answer {
             text-align: right;
         }
+
+        /* Hero Styles from Services page */
+        @keyframes blob-morph {
+            0% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+
+            100% {
+                border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+                transform: rotate(180deg);
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 1023px) and (min-width: 601px) {
+            #pricing-hero {
+                margin-top: 80px !important;
+                padding-top: 3rem !important;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Mobile View - Hero Stacks (text above image) */
+        @media (max-width: 600px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-grid .reveal-content {
+                text-align: center;
+            }
+
+            #pricing-hero {
+                margin-top: 100px !important;
+                padding-top: 6rem !important;
+                padding-bottom: 3rem !important;
+            }
+        }
+
+        /* Specific fix for 1024px view spacing */
+        @media (min-width: 1024px) and (max-width: 1100px) {
+            #pricing-hero {
+                min-height: 50vh !important;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -240,13 +299,35 @@
     <div class="mobile-sidebar-overlay"></div>
 
     <main style="margin-top: 80px;">
-        <!-- Hero Banner -->
-        <section
-            style="background: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1920&q=80') center/cover; color: white; padding: 80px 0 60px;">
-            <div class="container text-center">
-                <h1 style="color: white; font-size: 3rem; margin-bottom: 16px;">Transparent Pricing</h1>
-                <p style="font-size: 1.2rem; color: #E2E8F0; max-width: 600px; margin: 0 auto;">No hidden fees. Pay only
-                    for what you need. Honest prices for quality mobile mechanics.</p>
+        <!-- Pricing Hero -->
+        <section id="pricing-hero" class="section-padding"
+            style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 45%); min-height: 70vh; display: flex; align-items: center; position: relative; overflow: hidden; margin-top: 80px;">
+            <!-- Animated Background Decor -->
+            <div class="floating-blob-premium"
+                style="position: absolute; width: 300px; height: 300px; top: -100px; right: -50px; background: var(--primary-color); opacity: 0.15; z-index: 0; border-radius: 50%; animation: blob-morph 3s infinite alternate;">
+            </div>
+            <div class="container hero-grid" style="position: relative; z-index: 1;">
+                <div class="reveal-content">
+                    <h1 class="premium-reveal stagger-1"
+                        style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 2rem; ">
+                        Transparent <br><span style="color: var(--primary-color);">Pricing.</span></h1>
+                    <p class="large-text premium-reveal stagger-2"
+                        style="font-size: 1.3rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem; ">
+                        No hidden fees. Pay only for what you need. Honest prices for quality mobile mechanics brought
+                        directly to you.</p>
+                    <div class="premium-reveal stagger-3">
+                        <a href="#pricing-tiers" class="btn btn-primary btn-lg"><i class="fa-solid fa-tag"></i> Explore
+                            Plans</a>
+                    </div>
+                </div>
+                <div class="premium-reveal stagger-4 author-frame-premium" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
+                        alt="Honest bike repair pricing"
+                        style="width: 100%; border-radius: var(--border-radius-lg); z-index: 2; box-shadow: var(--shadow-lg);">
+                    <div class="floating-blob floating-blob-premium"
+                        style="top: -20px; left: -20px; background: var(--primary-color); opacity: 0.1; width: 100%; height: 100%; border-radius: var(--border-radius-lg); transform: rotate(5deg); z-index: -1; position: absolute;">
+                    </div>
+                </div>
             </div>
         </section>
 

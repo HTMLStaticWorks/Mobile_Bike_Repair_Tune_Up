@@ -547,6 +547,25 @@
             }
         }
 
+        /* Mobile View - Hero Stacks (text above image) */
+        @media (max-width: 600px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-grid .reveal-content {
+                text-align: center;
+            }
+
+            #services-hero {
+                margin-top: 100px !important;
+                padding-top: 6rem !important;
+                padding-bottom: 3rem !important;
+            }
+        }
+
         /* Specific fix for 1024px view spacing */
         @media (min-width: 1024px) and (max-width: 1100px) {
             #services-hero {
