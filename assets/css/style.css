@@ -557,6 +557,17 @@ section {
     margin-inline-end: auto;
 }
 
+.dashboard-topbar .nav-actions {
+    margin-inline-end: 16px;
+}
+
+/* Move icons slightly more to the left in desktop view only */
+@media (min-width: 1024px) {
+    .dashboard-topbar .nav-actions {
+        margin-inline-end: 36px;
+    }
+}
+
 .dashboard-topbar h2 {
     position: absolute;
     left: 50%;
