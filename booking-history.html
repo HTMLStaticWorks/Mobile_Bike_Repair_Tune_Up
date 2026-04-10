@@ -122,6 +122,113 @@
             color: white;
             border-color: var(--primary-color);
         }
+
+        /* Welcome Banner */
+        .welcome-card {
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .welcome-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .welcome-icon {
+            background: var(--card-bg);
+        }
+
+        /* Stat Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .si-green {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+
+        .si-blue {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3B82F6;
+        }
+
+        .si-purple {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8B5CF6;
+        }
+
+        @media (max-width: 600px) {
+            .welcome-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, var(--primary-color), #059669);
+            color: white;
+            padding: 32px;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .tip-content {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .tip-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tip-content {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -190,6 +297,49 @@
             <!-- Content Area -->
             <div class="dashboard-content">
 
+                <!-- Welcome -->
+                <div class="welcome-card">
+                    <div class="welcome-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div>
+                        <h2 style="margin-bottom: 8px; text-align: center;"> Your Service History</h2>
+                        <p style="margin: 0; color: var(--text-secondary);">Keep track of every tune-up and repair your
+                            bike has received. A well-documented bike is a valuable bike!</p>
+                    </div>
+                </div>
+
+                <!-- Service Summary Section -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon si-green">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Total Repairs</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">12</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon si-blue">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Lifetime Spent</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">$428.00</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon si-purple">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Last Service</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Oct 12</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Filter -->
                 <div class="filter-bar">
                     <div style="font-weight: 600;">All Repairs</div>
@@ -210,8 +360,8 @@
                     <div class="history-card">
                         <div>
                             <div style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 4px;"><i
-                                    class="fa-regular fa-calendar" style="margin-right: 8px;"></i>Oct 12, 2024 at 10:00
-                                AM</div>
+                                    class="fa-regular fa-calendar" style="margin-right: 8px;"></i>Oct 12, 2024
+                            </div>
                             <h3 style="margin-bottom: 4px; text-align: left;">Premium Overhaul</h3>
                             <div style="font-size: 0.9rem;">Price: <strong>$89.00</strong></div>
                         </div>
@@ -277,8 +427,21 @@
                             class="fa-solid fa-chevron-left"></i></div>
                     <div class="page-item active">1</div>
                     <div class="page-item">2</div>
-                    <div class="page-item">3</div>
-                    <div class="page-item"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+                <!-- Maintenance Tips -->
+                <div class="tip-card">
+                    <div style="font-size: 4rem; opacity: 0.8;">
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3 style="color: white; margin-bottom: 8px;">Pro-Tip: Wet Weather Care</h3>
+                        <p style="margin: 0; color: rgba(255,255,255,0.9);">After a rainy ride, always wipe down your
+                            chain and apply a fresh drop of lube to prevent rust and corrosion.</p>
+                    </div>
+                    <div>
+                        <a href="services.html" class="btn btn-white" style="white-space: nowrap;">Get Lube Guide</a>
+                    </div>
                 </div>
 
             </div>

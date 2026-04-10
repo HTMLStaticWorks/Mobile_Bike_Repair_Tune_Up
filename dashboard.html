@@ -114,6 +114,66 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .bike-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .bike-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .bike-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .bike-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary-color);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, var(--primary-color), #059669);
+            color: white;
+            padding: 32px;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .tip-content {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .tip-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tip-content {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -135,11 +195,16 @@
                     <i class="fa-solid fa-times"></i>
                 </button>
             </div>
-            <div class="sidebar-user" style="padding: 20px 24px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
-                <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">AD</div>
+            <div class="sidebar-user"
+                style="padding: 20px 24px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                <div class="user-avatar"
+                    style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                    AD</div>
                 <div class="user-info">
-                    <div class="user-name" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Alex Doe</div>
-                    <div class="user-role" style="font-size: 0.75rem; color: var(--text-secondary);">alex.doe@example.com</div>
+                    <div class="user-name" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Alex
+                        Doe</div>
+                    <div class="user-role" style="font-size: 0.75rem; color: var(--text-secondary);">
+                        alex.doe@example.com</div>
                 </div>
             </div>
             <nav class="sidebar-nav">
@@ -270,6 +335,54 @@
                     </div>
                 </div>
 
+                <!-- My Garage -->
+                <div style="margin-top: 32px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0; font-size: 1.1rem;">My Garage</h3>
+                        <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.85rem;"><i
+                                class="fa-solid fa-plus"></i> Add Bike</button>
+                    </div>
+                    <div class="bike-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div class="bike-card">
+                            <div class="bike-icon">
+                                <i class="fa-solid fa-bicycle"></i>
+                            </div>
+                            <div style="flex-grow: 1;">
+                                <div style="font-weight: 600; color: var(--text-primary);">Specialized Rockhopper</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Mountain Bike • Black</div>
+                            </div>
+                            <div style="color: var(--primary-color); cursor: pointer;"><i class="fa-solid fa-pen-to-square"></i></div>
+                        </div>
+                        <div class="bike-card">
+                            <div class="bike-icon" style="background: rgba(59, 130, 246, 0.1); color: #3B82F6;">
+                                <i class="fa-solid fa-person-biking"></i>
+                            </div>
+                            <div style="flex-grow: 1;">
+                                <div style="font-weight: 600; color: var(--text-primary);">Trek Domane AL 2</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Road Bike • Blue</div>
+                            </div>
+                            <div style="color: var(--primary-color); cursor: pointer;"><i class="fa-solid fa-pen-to-square"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maintenance Tip section -->
+                <div class="tip-card">
+                    <div style="font-size: 4rem; opacity: 0.8;">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3 style="color: white; margin-bottom: 8px;">Pro-Tip: Chain Maintenance</h3>
+                        <p style="margin: 0; color: rgba(255,255,255,0.9);">Cleaning and lubing your chain every 100 miles
+                            can double the life of your drivetrain. Need help? Book a <a href="services.html"
+                                style="color: white; text-decoration: underline; font-weight: 600;">Standard Service</a> today!</p>
+                    </div>
+                    <div>
+                        <a href="services.html" class="btn btn-white" style="white-space: nowrap;">Learn More</a>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>
@@ -277,7 +390,6 @@
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script>
-        // Adjust for mobile view Sidebar Toggle CSS Fixes inline for dashboard
         const toggleRule = document.querySelector('.sidebar-toggle');
         if (window.innerWidth < 1024) {
             toggleRule.style.display = 'block';
