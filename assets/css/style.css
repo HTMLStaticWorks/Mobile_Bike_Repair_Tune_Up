@@ -30,7 +30,7 @@
 }
 
 .dark-mode {
-    --bg-color: #0F172A;
+    --bg-color: #000000;
     --bg-color-alt: #0B1120;
     --text-primary: #F1F5F9;
     --text-secondary: #94A3B8;
@@ -144,6 +144,17 @@ a {
 .btn-outline:hover {
     background-color: var(--bg-color-alt);
     border-color: var(--text-primary);
+}
+
+.btn-white {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+}
+
+.btn-white:hover {
+    background-color: #F8FAFC;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-full {
@@ -636,9 +647,10 @@ section {
 
 /* Footer */
 .footer {
-    background-color: var(--secondary-color);
-    color: #FFFFFF;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     padding: calc(var(--spacing-unit) * 8) 0 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -1043,6 +1055,27 @@ section {
 }
 
 /* Footer Logo Sizing */
+.footer h4 {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    padding: calc(var(--spacing-unit) * 3) 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 .footer .brand-logo {
     width: 140px;
 }
@@ -1059,8 +1092,8 @@ section {
 
 /* Footer Social Icons - Refined Hover Experience */
 .footer .flex.gap-2 .icon-btn {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #FFFFFF !important;
+    background: var(--bg-color-alt);
+    color: var(--text-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
