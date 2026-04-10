@@ -225,29 +225,29 @@ section {
     opacity: 0.85;
 }
 
-/* Navbar Logo - 140px */
+/* Navbar Logo - 210px */
 .navbar .brand-logo {
-    width: 140px;
+    width: 210px;
 }
 
-/* Footer Logo - 140px (same as navbar) */
+/* Footer Logo - 210px (same as navbar) */
 .footer .brand-logo {
-    width: 140px;
+    width: 210px;
 }
 
-/* Mobile Sidebar Logo - 120px */
+/* Mobile Sidebar Logo - 180px */
 .mobile-sidebar-header .brand-logo {
-    width: 120px;
+    width: 180px;
 }
 
-/* Dashboard Sidebar Logo - 140px */
+/* Dashboard Sidebar Logo - 210px */
 .sidebar-header .brand-logo {
-    width: 140px;
+    width: 210px;
 }
 
-/* Auth Pages Logo - 160px (larger) */
+/* Auth Pages Logo - 240px (larger) */
 .auth-logo .brand-logo {
-    width: 160px;
+    width: 240px;
 }
 
 /* RTL Support */
@@ -263,49 +263,49 @@ section {
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
     .navbar .brand-logo {
-        width: 120px;
+        width: 180px;
     }
 
     .footer .brand-logo {
-        width: 120px;
+        width: 180px;
     }
 
     .sidebar-header .brand-logo {
-        width: 120px;
+        width: 180px;
     }
 }
 
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
     .navbar .brand-logo {
-        width: 110px;
+        width: 160px;
     }
 
     .footer .brand-logo {
-        width: 110px;
+        width: 160px;
     }
 
     .mobile-sidebar-header .brand-logo {
-        width: 110px;
+        width: 160px;
     }
 
     .auth-logo .brand-logo {
-        width: 140px;
+        width: 200px;
     }
 }
 
 /* Small Mobile (≤480px) */
 @media (max-width: 480px) {
     .navbar .brand-logo {
-        width: 100px;
+        width: 140px;
     }
 
     .footer .brand-logo {
-        width: 100px;
+        width: 140px;
     }
 
     .auth-logo .brand-logo {
-        width: 130px;
+        width: 180px;
     }
 }
 
@@ -1076,9 +1076,6 @@ section {
     font-size: 0.9rem;
 }
 
-.footer .brand-logo {
-    width: 140px;
-}
 
 /* Align all footer columns at the top */
 .footer-grid {
