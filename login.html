@@ -163,11 +163,35 @@
             right: auto;
             left: 16px;
         }
+
+        .floating-actions {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        [dir="rtl"] .floating-actions {
+            right: auto;
+            left: 24px;
+        }
     </style>
 </head>
 
 <body>
 
+    <div class="floating-actions">
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"
+            style="background-color: var(--card-bg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+            <i class="fa-solid fa-arrows-left-right"></i>
+        </button>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"
+            style="background-color: var(--card-bg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
 
     <div class="auth-container">
         <div class="auth-card">
@@ -179,8 +203,8 @@
             </div>
 
             <div class="auth-title">
-                <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Welcome Back to RepairHub</h2>
-                <p style="margin: 0; color: var(--text-secondary);">Log in to manage your bookings and service history.
+                <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Welcome Back</h2>
+                <p style="margin: 0; color: var(--text-secondary);">Log in to manage your bookings.
                 </p>
             </div>
 
@@ -211,7 +235,8 @@
                             me</label>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <a href="#" class="text-primary font-weight-bold" style="font-size: 0.85rem; text-decoration: none;">Forgot
+                        <a href="#" class="text-primary font-weight-bold"
+                            style="font-size: 0.85rem; text-decoration: none;">Forgot
                             Password?</a>
                     </div>
                 </div>
